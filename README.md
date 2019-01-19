@@ -1,61 +1,88 @@
-# Techzara sekoliko App
+# SekolikoFront
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
 
-## Initialisation Environnement de DEV
+## Development server
 
-Télécharger et Installer [NodeJS](https://nodejs.org/en/download/) : current Version 10.5.0.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-Initiliser l'environnement via Command Line.
+## Initialise Development Environment
 
-npm install -g http-server.
+Clone the repository
+```bash
+git clone https://github.com/nyandrianinamamy/sekoliko_front.git
+```
 
-npm install -g @angular/cli@latest
+Install the dependencies
+```bash
+npm install
+```
+## Creating Features
 
-npm install -g rxjs@latest
+To create a feature module containing components, routes, services,
+types and isolated ngrx infrastructure, you must specify the feature's
+`name`, `path` and optionally, you can specify your project's component
+`prefix` for its selector, but the schematic can often figure this out
+from your Angular project workspace.
 
-npm install -g rxdb@latest
+```bash
+schematics @egervari/schematics-angular:feature --name=my-feature --path=src/app
+```
 
-npm install -g babel-polyfill@latest
+If your project currently does not have a `/features` folder, the
+schematic will create one for you.
 
-npm install -g zone.js@latest
+## Creating Modules
 
-npm install -g @angular/cdk@latest
+Sometimes you wish to create modules outside of your routes. They are
+not really features, but reusable pieces of code the rest of the app
+can share. To create such a module, run the following schematic:
 
-npm install -g @angular/core@latest
+```bash
+schematics @egervari/schematics-angular:module --name=my-module --path=src/app
+```
 
-npm install -g @angular/material@latest
+If your project currently does not have a `/modules` folder, the
+schematic will create one for you.
 
-npm install -g @angular/cdk@latest
+## Creating Components
 
-npm install -g webpack@latest
+Creating components is equally easy - make sure to point the `path`
+to the module/feature folder you wish the component to be located:
 
-## Installation App
+```bash
+schematics @egervari/schematics-angular:component --name=my-form --path=src/app
+```
 
-Command Line In App Folder
-npm install 
+If your path currently does not have a `/components` folder, the
+schematic will create one for you.
 
-## Code scaffolding
+## Creating Services
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Creates a service and updates the containing module file.
+
+```bash
+schematics @egervari/schematics-angular:service --name=my-api --path=src/app
+```
+
+If your path currently does not have a `/services` folder, the
+schematic will create one for you.
+
+## Creating Types
+
+Creates a paired interface and functions file for a given model.
+
+```bash
+schematics @egervari/schematics-angular:type --name=user-profile --path=src/app
+```
+
+If your path currently does not have a `/types` folder, the
+schematic will create one for you.
+
 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. 
-The app will automatically reload if you change any of the source files.
-
-## Production Test server
-
-Run `ng build --prod` for a production application with Service Worker. 
-Run `http-server dist/techzara-sekoliko-app` for a production server.
-Navigate to `http://localhost:8080/`. 
-
-## Guides material angular
-[Angular Material](https://material.angular.io/)
 
 ## Running unit tests
 
@@ -68,13 +95,3 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-
-## Methode Post et Get
-
-Service dataService
-url: urlList
-ex: this.dataService.post(url).subscribe()
-
-## Menu de navigation
-
-ajouter dans MenuItem.ts

@@ -1,7 +1,7 @@
 {
-  "name": "your-home-app",
-  "short_name": "your-home-app",
-  "theme_color": "#01723c", //VERT #ffdf01 : JAUNE
+  "name": "sekoliko-front",
+  "short_name": "sekoliko-front",
+  "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "/",
